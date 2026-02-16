@@ -1,0 +1,137 @@
+/* Hero Image Styles */
+.image-wrapper {
+    position: relative;
+    z-index: 10;
+    border-radius: 64% 36% 27% 73% / 55% 58% 42% 45%;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    border: 4px solid white;
+    /* Bolder border */
+    background: white;
+    transform: scale(1.15);
+    /* Made it 15% bigger */
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    animation: fluid-blob 8s ease-in-out infinite;
+}
+
+
+.image-wrapper:hover {
+    animation-play-state: paused;
+    transform: scale(1.2) translateY(-10px);
+    /* Keeps it big and adds lift */
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    border-color: var(--accent);
+    /* Accent color on hover for extra boldness */
+}
+
+
+@keyframes fluid-blob {
+    0% {
+        border-radius: 64% 36% 27% 73% / 55% 58% 42% 45%;
+    }
+
+    25% {
+        border-radius: 73% 27% 26% 74% / 73% 36% 64% 27%;
+    }
+
+    50% {
+        border-radius: 28% 72% 44% 56% / 49% 40% 60% 51%;
+    }
+
+    75% {
+        border-radius: 40% 60% 30% 70% / 61% 32% 68% 39%;
+    }
+
+    100% {
+        border-radius: 64% 36% 27% 73% / 55% 58% 42% 45%;
+    }
+}
+
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Optimal for the wider trio shot */
+    max-width: 800px;
+    transform: scale(1.05);
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.image-wrapper:hover .hero-img {
+    transform: scale(1.1);
+}
+
+
+/* Adjust blob positions for the new image */
+.blob-1 {
+    top: -40px;
+    right: -40px;
+    opacity: 0.4;
+    animation: blob-float 15s infinite alternate;
+}
+
+.blob-2 {
+    bottom: -40px;
+    left: -40px;
+    opacity: 0.4;
+    animation: blob-float 12s infinite alternate-reverse;
+}
+
+@keyframes blob-float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .image-wrapper {
+        transform: scale(1);
+        /* Reset scale for smaller screens */
+        margin-top: 2rem;
+        border-width: 3px;
+    }
+
+    .image-wrapper:hover {
+        transform: scale(1.05) translateY(-5px);
+    }
+
+    .hero-visual {
+        padding: 2rem 1rem;
+    }
+
+    .hero-img {
+        max-width: 100%;
+    }
+
+    .blob {
+        width: 200px;
+        height: 200px;
+        filter: blur(40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .image-wrapper {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% !important;
+        /* Slightly simpler shape for very small screens */
+        animation-duration: 6s;
+    }
+}
