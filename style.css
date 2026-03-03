@@ -823,111 +823,124 @@ body.rtl.cart-open .cart-modal {
 
 /* --- Tablet Breakpoint (max-width: 1024px) --- */
 @media (max-width: 1024px) {
-    .container {
-        padding: 0 1.5rem;
+
+    h1 {
+        font-size: 2.75rem;
+    }
+
+    .hero-grid {
+        gap: 2.5rem;
     }
 
     .product-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
     }
 
-    h1 {
-        font-size: 3rem;
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
+        gap: 2.5rem;
     }
 }
 
-/* --- Mobile Breakpoint (max-width: 768px) --- */
 @media (max-width: 768px) {
-    .header {
-        padding: 0.75rem 0;
-    }
 
     .menu-toggle {
         display: block;
-        order: 3;
     }
 
     .nav {
-        display: none;
         position: fixed;
-        top: 68px;
-        /* Dynamic height adjustment */
+        top: 100%;
         left: 0;
         width: 100%;
-        height: calc(100vh - 68px);
+        height: 100vh;
         background: white;
         flex-direction: column;
-        padding: 2.5rem 1.5rem;
-        gap: 2rem;
-        border-top: 1px solid var(--border);
+        padding: 2rem;
+        gap: 1.5rem;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
         z-index: 999;
-        overflow-y: auto;
+    }
+
+    body.rtl .nav {
+        transform: translateX(100%);
     }
 
     .nav.open {
-        display: flex;
-        animation: slideInLeft 0.3s ease-out;
-    }
-
-    @keyframes slideInLeft {
-        from {
-            transform: translateX(-100%);
-            opacity: 0;
-        }
-
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
+        transform: translateX(0);
     }
 
     .nav a {
-        font-size: 1.25rem;
-        padding-bottom: 0.5rem;
+        font-size: 1.2rem;
+        padding-bottom: 0.75rem;
         border-bottom: 1px solid var(--bg-alt);
-        width: 100%;
     }
 
-    .hero {
-        padding: 4rem 0;
-    }
-
+    /* Hero */
     .hero-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
         text-align: center;
-    }
-
-    .hero-descrip {
-        margin: 1.5rem auto 2.5rem;
     }
 
     .hero-btns {
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .trust-badges {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 1.5rem;
+    }
+
+    /* Products */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    /* Features */
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-brand {
+        grid-column: span 1;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .container {
+        padding: 0 1rem;
     }
 
     .product-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
-    .about {
-        padding: 5rem 0;
-    }
-
-    .mission-box p {
-        font-size: 1.2rem;
+    .btn {
+        width: 100%;
+        text-align: center;
     }
 
     .form-grid {
@@ -935,69 +948,11 @@ body.rtl.cart-open .cart-modal {
     }
 
     .contact-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .faq-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        gap: 2.5rem;
-    }
-
-    .footer-brand {
-        grid-column: span 2;
-        text-align: center;
-    }
-
-    .footer-brand p {
-        max-width: 100%;
-    }
-}
-
-/* --- Small Mobile Breakpoint (max-width: 480px) --- */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2.25rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-brand {
-        grid-column: span 1;
-    }
-
-    .lang-switcher {
-        margin-right: 0;
-    }
-
-    .header-actions {
-        gap: 0.5rem;
+        padding: 2rem 1.25rem;
     }
 
     .nav-search-wrapper.active {
-        width: 180px;
+        width: 100%;
     }
 }
 
@@ -1485,4 +1440,5 @@ body.rtl.cart-open .cart-modal {
     line-height: 1.6;
 
 }
+
 
