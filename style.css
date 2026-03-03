@@ -95,7 +95,7 @@ h3 {
 
 /* Header */
 .header {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(145, 144, 144, 0.395);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
@@ -1483,4 +1483,5 @@ body.rtl.cart-open .cart-modal {
 .faq-item p {
     color: var(--text-muted);
     line-height: 1.6;
+
 }
