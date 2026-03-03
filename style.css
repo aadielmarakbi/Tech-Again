@@ -736,7 +736,7 @@ body.rtl.cart-open .cart-modal {
 
 /* Footer */
 .footer {
-    background: var(--primary);
+    background: rgba(58, 58, 58, 0.9);
     color: white;
     padding: 5rem 0 2rem;
 }
@@ -1485,3 +1485,4 @@ body.rtl.cart-open .cart-modal {
     line-height: 1.6;
 
 }
+
